@@ -1,0 +1,15 @@
+[configuration]
+
+entry_symbol = "jackgodot_library_init"
+compatibility_minimum = 4.1
+
+[libraries]
+
+macos.debug = "res://addons/jack/bin/macos/macos.framework/libjackgodot.macos.template_debug"
+macos.release = "res://addons/jack/bin/macos/macos.framework/libjackgodot.macos.template_release"
+windows.debug.x86_64 = "res://addons/jack/bin/windows/libjackgodot.windows.template_debug.dev.x86_64.dll"
+windows.release.x86_64 = "res://addons/jack/bin/windows/libjackgodot.windows.template_release.x86_64.dll"
+linux.debug.x86_64 = "res://addons/jack/bin/linux/libjackgodot.linux.template_debug.dev.x86_64.so"
+linux.release.x86_64 = "res://addons/jack/bin/linux/libjackgodot.linux.template_release.x86_64.so"
+web.release.wasm32 = "res://addons/jack/bin/web/libjackgodot.web.template_release.wasm32.wasm"
+web.debug.wasm32 = "res://addons/jack/bin/web/libjackgodot.web.template_debug.dev.wasm32.wasm"
