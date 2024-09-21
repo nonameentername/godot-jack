@@ -29,6 +29,8 @@ compiledb: clean
 	scons platform=$(PLATFORM) target=template_debug dev_build=yes debug_symbols=yes | tee build-log.txt
 	compiledb --parse build-log.txt
 
+all: release-build dev-build
+
 UNAME := $(shell uname)
 ifeq ($(UNAME), Windows)
     UID=1000

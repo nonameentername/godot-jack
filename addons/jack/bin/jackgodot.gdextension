@@ -11,5 +11,3 @@ windows.debug.x86_64 = "res://addons/jack/bin/windows/libjackgodot.windows.templ
 windows.release.x86_64 = "res://addons/jack/bin/windows/libjackgodot.windows.template_release.x86_64.dll"
 linux.debug.x86_64 = "res://addons/jack/bin/linux/libjackgodot.linux.template_debug.dev.x86_64.so"
 linux.release.x86_64 = "res://addons/jack/bin/linux/libjackgodot.linux.template_release.x86_64.so"
-web.release.wasm32 = "res://addons/jack/bin/web/libjackgodot.web.template_release.wasm32.wasm"
-web.debug.wasm32 = "res://addons/jack/bin/web/libjackgodot.web.template_debug.dev.wasm32.wasm"

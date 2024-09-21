@@ -4,3 +4,15 @@
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_1iibl")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "midi events"
+uppercase = true
+
+[node name="ItemList" type="ItemList" parent="."]
+offset_left = 8.0
+offset_top = 32.0
+offset_right = 1144.0
+offset_bottom = 632.0

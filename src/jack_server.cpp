@@ -244,7 +244,7 @@ void JackServer::open_midi_inputs(String name, int input_size, int output_size) 
         }
 
         // Create an output MIDI port
-        for (int i = 0; i < input_size; i++) {
+        for (int i = 0; i < output_size; i++) {
             singleton->output_ports.write[i] = jack_port_register(client, vformat("output_%d", i).ascii(),
                                                                   JACK_DEFAULT_MIDI_TYPE, JackPortIsOutput, 0);
             if (singleton->output_ports[i] == NULL) {

@@ -1,18 +1,27 @@
 extends Node2D
 
 
-# Called when the node enters the scene tree for the first time.
+@onready
+var midi_events: ItemList = $ItemList
+
+
 func _ready():
-	JackServer.open_midi_inputs("godot", 4, 4)
+	JackServer.open_midi_inputs("godot-midi", 4, 4)
 
 
 func _input(input_event):
 	if input_event is InputEventMIDI:
+		if input_event.message == MIDI_MESSAGE_NOTE_ON:
+			midi_events.add_item("note_on channel = %s note = %s velocity = %s" % [input_event.channel, input_event.pitch, input_event.velocity])
+		if input_event.message == MIDI_MESSAGE_NOTE_OFF:
+			midi_events.add_item("note_off channel = %s note = %s velocity = %s" % [input_event.channel, input_event.pitch, input_event.velocity])
+		if midi_events.item_count > 0:
+			midi_events.select(midi_events.item_count - 1, true)
+			midi_events.ensure_current_is_visible()
 		_print_midi_info(input_event)
 		JackServer.send_midi_event(input_event)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 
