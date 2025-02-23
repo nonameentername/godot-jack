@@ -127,7 +127,7 @@ jobs:
           DRY_RUN: true
 
       - name: Zip godot-jack artifact
-        run: zip -r godot-jack${{ env.TAG_VERSION }}.zip ./addons/jack
+        run: zip -r godot-jack_${{ env.TAG_VERSION }}.zip ./addons/jack
         env:
           TAG_VERSION: ${{ steps.tag.outputs.new_tag }}
 
