@@ -6,6 +6,7 @@ var midi_events: ItemList = $ItemList
 
 
 func _ready():
+	print ("godot-jack version: ", JackServer.get_version(), " build: ", JackServer.get_build())
 	JackServer.open_midi_inputs("godot-midi", 4, 4)
 
 

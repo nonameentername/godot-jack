@@ -11,6 +11,8 @@
 #include "godot_cpp/core/error_macros.hpp"
 #include "godot_cpp/variant/variant.hpp"
 #include "jack_server.h"
+#include "version_generated.gen.h"
+
 
 using namespace godot;
 
@@ -270,7 +272,19 @@ void JackServer::send_midi_event(Ref<InputEventMIDI> midi_event) {
     buffered_events.push_back(midi_event);
 }
 
+String JackServer::get_version() {
+    return GODOT_JACK_VERSION;
+}
+
+String JackServer::get_build() {
+    return GODOT_JACK_BUILD;
+}
+
+
 void JackServer::_bind_methods() {
+    ClassDB::bind_method(D_METHOD("get_version"), &JackServer::get_version);
+    ClassDB::bind_method(D_METHOD("get_build"), &JackServer::get_build);
+
     ClassDB::bind_method(D_METHOD("process", "delta"), &JackServer::process);
     ClassDB::bind_method(D_METHOD("open_midi_inputs", "name"), &JackServer::open_midi_inputs);
     ClassDB::bind_method(D_METHOD("send_midi_event", "midi_event"), &JackServer::send_midi_event);

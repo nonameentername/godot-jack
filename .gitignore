@@ -19,3 +19,5 @@ addons/csound/bin/x11/
 build
 build-log.txt
 compile_commands.json
+src/version_generated.gen.h
+addons/jack/bin/jackgodot.gdextension

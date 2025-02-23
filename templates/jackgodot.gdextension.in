@@ -1,3 +1,7 @@
+[godot-jack]
+version = "${version}"
+build = "${build}"
+
 [configuration]
 
 entry_symbol = "jackgodot_library_init"

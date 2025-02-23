@@ -47,6 +47,9 @@ public:
 
     static int jack_process(jack_nframes_t nframes, void *arg);
     static void jack_shutdown(void *arg);
+
+    String get_version();
+    String get_build();
 };
 } // namespace godot
 
