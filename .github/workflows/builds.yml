@@ -92,7 +92,8 @@ jobs:
 
       - name: Verify godot-jack
         run: |
-          godot --headless -s jack_run_scene.gd
+          godot --headless --import || true
+          godot --headless -s jack_run_scene.gd | grep godot-jack
 
   publish_artifacts:
     if: ${{ github.ref == 'refs/heads/main' }}
