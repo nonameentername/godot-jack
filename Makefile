@@ -31,6 +31,22 @@ compiledb: clean
 
 all: release-build dev-build
 
+docker-ubuntu:
+	docker build -t godot-jack-ubuntu ./platform/ubuntu
+
+shell-ubuntu: docker-ubuntu
+	docker run -it --rm -v ${CURDIR}:${CURDIR} --user ${UID}:${GID} -w ${CURDIR} godot-jack-ubuntu ${SHELL_COMMAND}
+
+ubuntu:
+	$(MAKE) shell-ubuntu SHELL_COMMAND='./platform/ubuntu/build_release.sh'
+	$(MAKE) shell-ubuntu SHELL_COMMAND='./platform/ubuntu/build_debug.sh'
+
+ubuntu-debug:
+	$(MAKE) shell-ubuntu SHELL_COMMAND='./platform/ubuntu/build_debug.sh'
+
+ubuntu-release:
+	$(MAKE) shell-ubuntu SHELL_COMMAND='./platform/ubuntu/build_release.sh'
+
 UNAME := $(shell uname)
 ifeq ($(UNAME), Windows)
     UID=1000

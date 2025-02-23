@@ -11,6 +11,12 @@ The build scripts were developed using Ubuntu (x86_64).
 
 ## Instructions
 
+1. Install dependencies:
+
+```bash
+sudo apt install -y make g++ libjack-dev
+```
+
 1. Compile development version:
 
 ```bash

@@ -1,0 +1,2 @@
+#define GODOT_JACK_VERSION "${version}"
+#define GODOT_JACK_BUILD "${build}"
