@@ -90,6 +90,11 @@ jobs:
           use-dotnet: false
           include-templates: false
 
+      - name: Intall libjack
+        run: |
+          sudo apt update -y
+          sudo apt install -y libjack-dev
+
       - name: Verify godot-jack
         run: |
           godot --headless --import || true
